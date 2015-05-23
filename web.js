@@ -24,14 +24,11 @@ app.get('/*', function(request, response) {
 
     fs.readFile(filePath, function(err, content) {
         if(err){
-            contentType = 'text/html';
-            var errorFilePath = './html/errorpage.html';
-            fs.readFile(errorFilePath, function(err, errorContent){
-                response.writeHead(200, {'Content-Type' : contentType});
-                response.write(errorContent);
-                console.log("GET RESPONDED WITH ERROR PAGE");
-                response.end();
-            });
+            contentType = 'text/plain';
+            response.writeHead(200, {'Content-Type' : contentType});
+            response.write("not found");
+            console.log("GET RESPONDED WITH ERROR PAGE");
+            response.end();
         }else{
             response.writeHead(200, {'Content-Type' : contentType});
             response.write(content);

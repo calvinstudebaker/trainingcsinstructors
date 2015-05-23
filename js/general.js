@@ -6,5 +6,7 @@ function switchToPage(page){
 };
 
 $(document).ready(function(){
-	
+	$("ul.menuBar li").onclick(function(){
+
+	});
 });
