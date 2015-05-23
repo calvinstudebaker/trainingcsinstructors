@@ -6,11 +6,5 @@ function switchToPage(page){
 };
 
 $(document).ready(function(){
-	$("#signUpButton").click(function(){
-		switchToPage("/html/signup.html");
-	});
-
-	$("#scheduleButton").click(function(){
-		switchToPage("/html/schedule.html");
-	});
+	
 });
