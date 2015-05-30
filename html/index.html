@@ -5,11 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Custom styles for footer -->
+  <link href="../css/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-  
 <div class="container">
   <!--nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -27,8 +29,8 @@
   <div role="tabpanel">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
-    <li role="presentation"><a href="#understand" aria-controls="understand" role="tab" data-toggle="tab">Understand</a></li>
+    <li role="presentation"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+    <li role="presentation" class="active"><a href="#understand" aria-controls="understand" role="tab" data-toggle="tab">Understand</a></li>
     <li role="presentation"><a href="#plan" aria-controls="plan" role="tab" data-toggle="tab">Plan</a></li>
     <li role="presentation"><a href="#build" aria-controls="build" role="tab" data-toggle="tab">Build</a></li>
     <li role="presentation"><a href="#testshare" aria-controls="testshare" role="tab" data-toggle="tab">Test & Share</a></li>
@@ -37,11 +39,219 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="overview">Overview</div>
-    <div role="tabpanel" class="tab-pane" id="understand">Understand</div>
-    <div role="tabpanel" class="tab-pane" id="plan">Perfect plan</div>
-    <div role="tabpanel" class="tab-pane" id="build">Build build build</div>
-    <div role="tabpanel" class="tab-pane" id="testshare">Share with us!</div>
+    <div role="tabpanel" class="tab-pane" id="overview">
+      <br/>
+      <p>
+      This website is a guide for CS instructors interested in facilitating more productive discussions amongst their computer science students. We pay particular attention to discussions focused on solving technical problems. With students, we often approach solving technical problems (whether consciously or unconsciously) with a four step process of Understand-Plan-Build-Test-Share. This process can also be used to solve other kinds of problems, including this one of gettings students to talk more.
+      </p>
+      <p>
+      To apply this process to your teaching, start with understanding how to get students to talk, then follow our model to plan for your next discussion, where you will build a productive discussion with your students, then afterwards test how the discussion went using our rubric, and lastly share ideas, questions and even a video of your discussion with our community of CS instructors.</p>
+    </div>
+
+    <div role="tabpanel" class="tab-pane active" id="understand">
+      <h3>Why is getting students to talk important?</h3>
+
+      <p>"Learning results from what the student does and thinks and only from what the student does and thinks. The teacher can advance learning only by influencing what the student does to learn." - Herb Simon, Nobel Laureate and Artificial Intelligence expert</p>
+
+      <p>Getting students to talk promotes learning. This happens because talk:</p>
+      <ul>
+        <li>Makes thinking visible for both the instructor and the student. You are able to see what they do and do not understand</li>
+        <li>Pushes students to explain and clarify their ideas using evidence and logic</li>
+        <li>Requires students to understand and critique ideas from other students in order to improve on them and achieve shared understanding</li>
+        <li>Builds confidence and willingness to take risks</li>
+      </ul>
+
+      <h3>What could a productive discussion look like in computer science?</h3>
+      <center><iframe width="560" height="315" src="https://www.youtube.com/embed/-HCmMwLmad4" frameborder="0" allowfullscreen></iframe></center>
+
+      <br/>
+      <p>Here's the same problem discussed in a way that is less productive for student learning.</p>
+      <center><iframe width="560" height="315" src="https://www.youtube.com/embed/jgfZryj3yfE" frameborder="0" allowfullscreen></iframe></center>
+
+      <h3>How do I create a culture where students feel comfortable talking?</h3>
+      <p>First, you need to believe that the students (not the instructor) are the ones who should be doing the majority of the talking.</p>
+      <p>Then, set clear expectations for discussions. Tell your students that discussions will be a normal part of the learning process, so you expect them to:</p>
+      <ul>
+        <li>Contribute to discussions by discussing ideas, not people</li>
+        <li>Listen and respond respectfully to others</li>
+        <li>Speak loudly so everyone can hear them</li>
+        <li>Ask questions when they’re confused</li>
+      </ul>
+      <p>Lastly, create regular opportunities for open-ended discussions where you reinforce these expectations for participation. So, if a student is not meeting an expectation during a discussion, you should stop to gently remind them.</p>
+
+      <h3>What are proven strategies for getting students to talk?</h3>
+      <p>There are many strategies (or “talk moves”) that you can use with your students. As you consider which moves might be most effective with your students, keep in mind that you don’t need to use all of them in every discussion. Pick one or two to try out for your next discussion, and then, over time, include more of the talk moves in your facilitation.</p>
+
+      <center><iframe width="560" height="315" src="https://www.youtube.com/embed/4ecw57vU1W8" frameborder="0" allowfullscreen></iframe></center>
+
+      <h4>Share, expand, clarify:</h4>
+      <p>Ask all students to share and elaborate on their ideas out loud</p>
+      <ul>
+        <li><b>Wait time:</b> Wait a few seconds after asking a question to give students time to think about their answers</li>
+        <li><b>Stop and jot:</b> Give students time to think with a few minutes to jot down ideas before discussing</li>
+        <li><b>Partner time:</b> Have students share their thoughts with a partner and then share a key point from their mini-discussion with the larger group</li>
+        <li><b>“Say more”:</b> Ask a student to elaborate on their idea by saying, “Can you say a little more about that?”</li>
+        <li><b>“So, are you saying…?”:</b> Revoice a student’s idea to push them to clarify their thinking. The student can agree or disagree with you and then say more.</li>
+      </ul>
+      <br/>
+
+      <h4>Deepen their reasoning:</h4> 
+      <p>Push students to deepen their reasoning with evidence and logic</p>
+      <ul>
+        <li><b>Probe for evidence/reasoning:</b> Ask a student to explain how they arrived at their reasoning by providing more evidence. You can say, “Why?” or “Why do you think that?”</li>
+        <li><b>Challenge or counterexample:</b> Push on a student’s idea by giving counterexamples to understand if something always work the way the student is suggesting. The goal isn’t to tell the student that they’re wrong, but rather to complexify their thinking</li>
+      </ul>
+      <br/>
+
+      <h4>Listen carefully:</h4> 
+      <p>Encourage students to listen carefully to one another so they can be prepared to build on each other’s thinking</p>
+      <ul>
+        <li><b>Repeat and rephrase:</b> Ask students to put into their own words what another student has said</li>
+      </ul>
+      <br/>
+
+      <h4>Think with others:</h4> 
+      <p>Get students to talk to one another instead of the instructor in order to improve the thinking of the entire group</p>
+      <ul>
+        <li><b>Agree/Disagree and Why?:</b> Push students to engage with the ideas of others by asking who agrees or disagrees with the idea presented and to share why</li>
+        <li><b>Add on:</b> Ask students to build on or add on to the ideas of another student, “Who can add on to his idea?”</li>
+      </ul>
+    </div>
+    
+    <div role="tabpanel" class="tab-pane" id="plan">
+    <br/>
+    <p>
+      Productive discussions don’t just happen. They go smoothly because we prepare for them in advance by considering multiple ways to solve a problem, how we’ll guide students through a problem, where students might get confused, and which talk moves we’ll employ. 
+    </p>
+    <p>
+      Here we model this planning process by answering a series of relevant questions. As you read our answers, plan your own discussion by answering them for a problem you might work on with your students.
+    </p>
+
+    <h3>1. What is the CS problem we’ll be discussing?</h3>
+    <p>Let's use this problem: Write a recursive function called reverse that takes a string and reverses it. Return the reversed string.</p>
+    <p><i>(See the video discussion of this problem in the Understand tab)</i></p>
+
+    <h3>2. How would I solve it?</h3>
+    <p>First, I'd think through some examples of functionality, like:</p>
+    <ul>
+      <li>“Hello” → “olleH”</li>
+      <li>“the tree” → “eert eht”</li>
+      <li>“A” → “A”</li>
+      <li>“” → “”</li>
+    </ul>
+    
+    <p>Then, I'd figure out the base case. For this problem, it's an empty string and maybe also a string with one letter.</p>
+
+    <p>The recursive structure is re-calling the function with progressively shorter strings</p>
+    <p>The reversed string is the reverse(current_string_without_first_letter) + first_letter(current_string)</p>
+
+    <p>Now, I can write the code:</b></p>
+    <div class="well">
+    <p><code>
+    String reverse(String s) { <br>&nbsp;&nbsp;
+       //Base case <br>&nbsp;&nbsp;
+       if( s.length() == 0 || s.length() == 1 ) { <br>&nbsp;&nbsp;&nbsp;&nbsp;
+          return s; <br>&nbsp;&nbsp;
+       } <br>&nbsp;&nbsp;
+       else { <br>&nbsp;&nbsp;&nbsp;&nbsp;
+         //Recursive case <br>&nbsp;&nbsp;&nbsp;&nbsp;
+         return reverse( s.substring(1) ) + s.get(0); <br>&nbsp;&nbsp;
+      } <br>
+    } 
+    </code></p>
+    </div>
+
+    <h3>3. What’s another way (or two) to solve this problem?</h3>
+    <p>Sometimes, as experts, we tend to quickly see a working solution and think that’s the best and perhaps the only correct way to solve the problem. In some cases, there may only be one correct solution, but in many cases, there are alternative ways to solve the problem that also work. In order to support our students, it’s important that we take time to consider alternative ways to approach a problem so we can more effectively guide them towards <i>a</i> working solution, not just the one working solution that we see.</p>
+
+    <p><b>For our reverse function:</b> We could also grab the last letter, put it at the front and then reverse the first part of the string.</p>
+
+    <h3>4. How will I guide students in understanding the problem?</h3>
+    <p>Understanding the problem requires breaking down the problem by writing down useful information and defining example functionality. We do this by: </p>
+    <ul>
+      <li>Writing down key given information in the problem</li>
+      <li>Writing down example functionality</li>
+      <li>Visualizing the problem (if appropriate)</li>
+      <li>Refreshing on related concepts (e.g. iteration, recursion) and relevant analogies</li>
+    </ul>
+
+    <p>In our example of reversing a string recursively, our task is to write a function, so we could start our discussion by writing the key components of the method, even if we don’t yet write them as a function header. <br> &nbsp;&nbsp;
+    Method: Reverse string <br> &nbsp;&nbsp;
+    Returns: String <br> &nbsp;&nbsp;
+    Parameters: String </p>
+
+    <p>Example functionality for reversing the string includes an empty string, a string with one character, a string with multiple characters (possibly including a space). We’d want students to come up with this list as a class and then also determine what the output of the method would be given these inputs. <br>
+    For example: “Apple” → “elppA” means that given the input parameter “Apple”, we expect the output to be “elppA” from our reversing function. </p>
+
+    <p>Students may need to refresh on the key ideas of recursion, so I would ask the students something like, “We know we need to solve this problem recursively. What do we remember about recursion?” This part of the discussion may bring to light key questions that students have about the topic that could be addressed by other students (or the instructor, as a last resort) before planning the solution. </p>
+
+    <h3>5. How will I guide students in plannng the solution?</h3>
+    <p>In computer science, two common ways to plan solutions are writing an algorithm in English and writing an algorithm in pseudocode. Whichever approach you use with your students, make sure that they are the ones who are devising the algorithm. As they discuss, write their ideas on the board, even if you can see that they’re wrong. Let the discussion continue as long as it’s productive because students may notice the error themselves and backtrack to fix it, which lead to more learning than if you quickly correct it for them.</p>
+
+    <h3>6. How will I guide students in building the working code?</h3>
+    <p>Build the working code using the programming language of your choice. You can write the code on the board and then later test it by hand or write the code into a programming environment and test it there. </p>
+    <p>As with planning the code, students should participate in a discussion to determine how to translate their algorithm into code. This experience gives them useful practice of the task they’ll have to do for homework and exams. </p>
+    <p>Even for “obvious” parts of the code, let them tell you what to write (or even let students come to the front to write parts of the code), so that students can own the work and continue in their productive discussion about solving the problem. </p>
+    
+    <h3>7. How will I guide students in testing our code?</h3>
+    <p>During the Understand phase of solving the problem, students outlined a set of expected functionality for their code. They should test their code using that expected functionality. </p>
+    <p>Have students guide the conversation about how to test their code. Your role as the facilitator is to write down each step of the process</p>
+
+    <h3>8. Where might students get confused?</h3>
+    <p>With this recursive problem so early in the term, students might struggle with:</p>
+    <ul>
+      <li>Solving it iteratively</li>
+      <li>Not considering the empty string</li>
+      <li>Being unsure of the recursive structure</li>
+    </ul>
+    <p>For other topics, find possible misconceptions here</p>
+
+    <h3>9. What analogies can I introduce or reference to help students understand the problem?</h3>
+    <p><b>Phone a friend:</b> With recursion, we often talking about how engineers are lazy and want to do as little work as possible. Whenever possible, we like to pass off work to friends who are just as capable of doing the same task. I can do a piece of it and then pass the rest of the work off to someone else to do. Once they’re done, then they can give me their completed work so I can add it to my work.</p>
+    <p>In using any analogies, you want to be aware of the where the analogy breaks down and to point out to students where the analogy breaks down so they don’t build up their complete mental model of a concept on an analogy that was simply meant to introduce them to a new idea using something they can relate to.</p>
+    <p>For other topics, find possible analogies here</p>
+
+    <h3>10. What parts of facilitating a discussion do I want to work on? </h3>
+    <p>I want to focus on getting students to share, expand and clarify. The "partner time" talk move seems like it could be helpful when students are unsure of an idea so they can have time to think with a partner before discussing as a large group. That seems a little lower risk for shy students. In our last discussion, using “Say More” was super effective, so I’m going to keep working on using that and also try revoicing this time. </p>
+
+    </div>
+    
+
+    <div role="tabpanel" class="tab-pane" id="build">
+    <br>
+    <p>Practice your discussion with friends </p>
+    <p>Then, facilitate a discussion with your students and share your discussion video with us!</p>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="testshare">
+      <h3>How do I evaluate our discussion?</h3>
+      <p>You can use these criterion to evaluate discussions with your students.<p>
+      <h4>Instructor as guide</h4>
+      <ul>
+        <li>Talk less than students</li>
+        <li>Actively listen to students even when s/he is not talking</li>
+        <li>Write down all students ideas, even wrong ones to further discussion</li>
+        <li>Use talk moves to further productive discussion</li>
+        <li>Set clear expectations and uphold them during discussion</li>
+        <li>Ask open-ended, not leading questions</li>
+      </ul>
+      <h4>Students as listeners</h4>
+      <ul>
+        <li>Listen closely to their peers</li>
+        <li>(If possible) Sit in a circle, so everyone can see one another</li>
+      </ul>
+      <h4>Students as talkers</h4>
+      <ul>
+        <li>Work hard to explain their own thinking</li>
+        <li>Take risks, go public with their ideas</li>
+        <li>Reason with evidence and logic</li>
+        <li>Connect their ideas to the ideas of others</li>
+        <li>Pose questions</li>
+        <li>Revise their ideas based on input from others</li>
+        <li>Talk with one another more than to the instructor</li>
+      </ul>
+
+    </div>
   </div>
 
 </div> <!--end container-->
