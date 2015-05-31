@@ -5,12 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/slider.css">
   <!-- Custom styles for footer -->
   <!-- <link href="../css/style.css" rel="stylesheet"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap-slider.js"></script>
+  <script src="../js/general.js"></script>
 </head>
-
+<link rel="icon" type="image/png" href="../res/favicon.ico">
 <body>
 <div class="container">
   <!--nav class="navbar navbar-default">
@@ -26,12 +29,19 @@
     <p>An interactive guide to leading better problem solving discussions</p>
   </div>
 
+  <div class="progress">
+    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+      0%
+    </div>
+  </div>
+
   <div role="tabpanel">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#understand" aria-controls="understand" role="tab" data-toggle="tab">Understand the problem</a></li>
-    <li role="presentation"><a href="#plan" aria-controls="plan" role="tab" data-toggle="tab">Plan your next discussion</a></li>
-    <li role="presentation"><a href="#testshare" aria-controls="testshare" role="tab" data-toggle="tab">Share & Iterate</a></li>
+    <li role="presentation" class="active"><a href="#understand" aria-controls="understand" role="tab" data-toggle="tab" onclick="setProgressBar(0);">Understand the problem</a></li>
+    <li role="presentation"><a href="#plan" aria-controls="plan" role="tab" data-toggle="tab" onclick="setProgressBar(25);">Plan your next discussion</a></li>
+    <li role="presentation"><a href="#practice" aria-controls="practice" role="tab" data-toggle="tab" onclick="setProgressBar(50);">Practice</a></li>
+    <li role="presentation"><a href="#testshare" aria-controls="testshare" role="tab" data-toggle="tab" onclick="setProgressBar(75);">Reflect</a></li>
   </ul>
   </div>
 
@@ -124,97 +134,118 @@
       Productive discussions don’t just happen. They go smoothly because we prepare for them in advance by considering multiple ways to solve a problem, how we’ll guide students through a problem, where students might get confused, and which talk moves we’ll employ. Here are a list of questions to consider as your prepare for your next discussion.
     </p>
 
-    <h3><code>for (problem in problem_set):</code></h3>
+    <h3><code>for (problem in discussion_handout):</code></h3>
 
-    <h3>Understand the problem</h3>
-    <ol>
-      <li><b>How would you solve the problem?</b></li>
-      <p>It's important to make sure you've worked completely through the problem before working with students. Even if you think you can eyeball a solution, take time to write it down, just in case there's a "twist" in the problem that you don't initially see.</p>
-
-      <li><b>What is another way (or two) to solve the problem?</b></li>
-      <p>Sometimes, as experts, we tend to quickly see a working solution and think that’s the best and perhaps the only correct way to solve the problem. In some cases, there may only be one correct solution, but in many cases, there are alternative ways to solve the problem that also work. In order to support our students, it’s important that we take time to consider alternative ways to approach a problem so we can more effectively guide them towards <i>a</i> working solution, not just the one working solution that we see.</p>
-    </ol>
-
-    <h3>Plan the discussion</h3>
-    <ol>
-      <li><b>How will you start the discussion?</b></li>
-      <p>Here are a few options to consider:</p>
-      <ul>
-        <li>Have students work for several minutes individually on the problem so they have time to form their own ideas about how to approach it. They don't need to solve the problem before having a class discussion.</li> 
-        <li>Review relevant concepts, like we do in the example discussion video in the Understand tab</li>
-        <li>Have students work in small groups to understand the problem.</li>
-      </ul>
-      <p>From these initial activities, you could go on to have a class discussion about how to solve the problem.</p>
-
-      <li><b>What expectations have you (or will you) set for discussions? How can you set and/or reinforce them?</b></li> 
-      <p>Here are some expectations to considering sharing with students:</p>
-      <ul>
-        <li>Contribute to discussions by discussing ideas not people</li>
-        <li>Listen and respond respectfully to others</li>
-        <li>Speak loudly so everyone can hear them</li>
-        <li>Ask questions when they’re confused</li>
-      </ul>
-
-      <li><b>How will you guide students through the problem?</b></li>
-      <p>We recommend following this problem solving process:</p>
-      <ul>
-        <li>Understand the problem by writing down the given information and defining example functionality (i.e. key use cases)</li>
-        <li>Review related concepts and analogies</li>
-        <li>Plan a solution by first writing the algorithm in English and/or pseudocode</li>
-        <li>Build the solution in code</li>
-        <li>Test the solution on the example functionality</li>
-        <li>Iterate/update the algorithm and code until the solution works as expected</li>
-      </ul>
-    </ol>
-
-    <h3>Anticipate where students might get confused</h3>
-    <ol>
-      <li><b>What concepts are covered in this problem?</b></li> 
-      <li><b>How comfortable do you think your students are with these concepts?</b></li>
-      <li><b>Where might students get confused?</b></li> 
-    </ol>
-
-    <h3>Choose which talk move(s) to use</h3>
-    <ol>
-      <li><b>Which talk moves have you tried previously?</b></li>
-      <li><b>How comfortable did you feel using them? Do you want to try them again?</b></li> 
-      <li><b>Are there new talk moves you want to use with students? Here they are:</b></li>
-
-      <p>Share, expand, clarify:</p>
+    <h3>Use this guide to plan a discussion for each practice problem</h3>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h5>Example Problem: Subsequences</h5>
+        <p><div class="text-muted"> (Source: Stanford University. (2015). Retrieved May 31, 2015, from https://web.stanford.edu/class/cs106b/sections/section03.pdf)</div></p>
+        <br>
+        <p>Write a function <code>bool isSubsequence(string big, string small)</code> that takes two strings and returns if the second string (small) is a subsequence of the first string (big). A string is a subsequence of another if it contains the same letters in the same order, but not necessary consecutively. You can assume both strings are already lowercased.
+        <br><br>
+        Test Cases:</p>
         <ul>
-          <li><b>Wait time:</b> Wait a few seconds after asking a question to give students time to think about their answers</li>
-          <li><b>Stop and jot:</b> Give students time to think with a few minutes to jot down ideas before discussing</li>
-          <li><b>Partner time:</b> Have students share their thoughts with a partner and then share a key point from their mini-discussion with the larger group</li>
-          <li><b>“Say more”:</b> Ask a student to elaborate on their idea by saying, “Can you say a little more about that?”</li>
-          <li><b>“So, are you saying…?”:</b> Revoice a student’s idea to push them to clarify their thinking. The student can agree or disagree with you and then say more.</li>
+          <li><code>isSubsequence("computer", "core") => false</code></li>
+          <li><code>isSubsequence("computer", "cope") => true</code></li>
+          <li><code>isSubsequence("computer", "computer") => true</code></li>
+        </ul>
+      </div>
+    </div>
+      
+    <ol>
+      <h3><li>Understand the problem</li></h3>
+      <ol>
+        <li><b>How would you solve the problem?</b></li>
+        <p>It's important to make sure you've worked completely through the problem before working with students. Even if you think you can eyeball a solution, take time to write it down, just in case there's a "twist" in the problem that you don't initially see.</p>
+
+        <li><b>What is another way (or two) to solve the problem?</b></li>
+        <p>Sometimes, as experts, we tend to quickly see a working solution and think that’s the best and perhaps the only correct way to solve the problem. In some cases, there may only be one correct solution, but in many cases, there are alternative ways to solve the problem that also work. In order to support our students, it’s important that we take time to consider alternative ways to approach a problem so we can more effectively guide them towards <i>a</i> working solution, not just the one working solution that we see.</p>
+      </ol>
+      <br>
+      <textarea rows="4" cols="70" placeholder="Jot down notes here"></textarea>
+      <h3><li>Plan the discussion</li></h3>
+      <ol>
+        <li><b>How will you start the discussion?</b></li>
+        <p>Here are a few options to consider:</p>
+        <ul>
+          <li>Have students work for several minutes individually on the problem so they have time to form their own ideas about how to approach it. They don't need to solve the problem before having a class discussion.</li> 
+          <li>Review relevant concepts, like we do in the example discussion video in the Understand tab</li>
+          <li>Have students work in small groups to understand the problem.</li>
+        </ul>
+        <p>From these initial activities, you could go on to have a class discussion about how to solve the problem.</p>
+
+        <li><b>What expectations have you (or will you) set for discussions? How can you set and/or reinforce them?</b></li> 
+        <p>Here are some expectations to considering sharing with students:</p>
+        <ul>
+          <li>Contribute to discussions by discussing ideas not people</li>
+          <li>Listen and respond respectfully to others</li>
+          <li>Speak loudly so everyone can hear them</li>
+          <li>Ask questions when they’re confused</li>
         </ul>
 
-        <p>Deepen their reasoning:</p> 
+        <li><b>How will you guide students through the problem?</b></li>
+        <p>We recommend following this problem solving process:</p>
         <ul>
-          <li><b>Probe for evidence/reasoning:</b> Ask a student to explain how they arrived at their reasoning by providing more evidence. You can say, “Why?” or “Why do you think that?”</li>
-          <li><b>Challenge or counterexample:</b> Push on a student’s idea by giving counterexamples to understand if something always work the way the student is suggesting. The goal isn’t to tell the student that they’re wrong, but rather to complexify their thinking</li>
-        </ul>
-
-        <p>Listen carefully:</p> 
-        <ul>
-          <li><b>Repeat and rephrase:</b> Ask students to put into their own words what another student has said</li>
-        </ul>
-
-        <p>Think with others:</p>
-        <ul>
-          <li><b>Agree/Disagree and Why?:</b> Push students to engage with the ideas of others by asking who agrees or disagrees with the idea presented and to share why</li>
-          <li><b>Add on:</b> Ask students to build on or add on to the ideas of another student, “Who can add on to his idea?”</li>
+          <li>Understand the problem by writing down the given information and defining example functionality (i.e. key use cases)</li>
+          <li>Review related concepts and analogies</li>
+          <li>Plan a solution by first writing the algorithm in English and/or pseudocode</li>
+          <li>Build the solution in code</li>
+          <li>Test the solution on the example functionality</li>
+          <li>Iterate/update the algorithm and code until the solution works as expected</li>
         </ul>
       </ol>
+      <br>
+      <textarea rows="4" cols="70" placeholder="Jot down notes here"></textarea>
+      <h3><li>Anticipate where students might get confused</li></h3>
+      <ol>
+        <li><b>What concepts are covered in this problem?</b></li> 
+        <li><b>How comfortable do you think your students are with these concepts?</b></li>
+        <li><b>Where might students get confused?</b></li> 
+      </ol>
+      <br>
+      <textarea rows="4" cols="70" placeholder="Jot down notes here"></textarea>
+      <h3><li>Choose which talk move(s) to use</li></h3>
+      <ol>
+        <li><b>Which talk moves have you tried previously?</b></li>
+        <li><b>How comfortable did you feel using them? Do you want to try them again?</b></li> 
+        <li><b>Are there new talk moves you want to use with students? Here they are:</b></li>
 
+        <p>Share, expand, clarify:</p>
+          <ul>
+            <li><b>Wait time:</b> Wait a few seconds after asking a question to give students time to think about their answers</li>
+            <li><b>Stop and jot:</b> Give students time to think with a few minutes to jot down ideas before discussing</li>
+            <li><b>Partner time:</b> Have students share their thoughts with a partner and then share a key point from their mini-discussion with the larger group</li>
+            <li><b>“Say more”:</b> Ask a student to elaborate on their idea by saying, “Can you say a little more about that?”</li>
+            <li><b>“So, are you saying…?”:</b> Revoice a student’s idea to push them to clarify their thinking. The student can agree or disagree with you and then say more.</li>
+          </ul>
+
+          <p>Deepen their reasoning:</p> 
+          <ul>
+            <li><b>Probe for evidence/reasoning:</b> Ask a student to explain how they arrived at their reasoning by providing more evidence. You can say, “Why?” or “Why do you think that?”</li>
+            <li><b>Challenge or counterexample:</b> Push on a student’s idea by giving counterexamples to understand if something always work the way the student is suggesting. The goal isn’t to tell the student that they’re wrong, but rather to complexify their thinking</li>
+          </ul>
+
+          <p>Listen carefully:</p> 
+          <ul>
+            <li><b>Repeat and rephrase:</b> Ask students to put into their own words what another student has said</li>
+          </ul>
+
+          <p>Think with others:</p>
+          <ul>
+            <li><b>Agree/Disagree and Why?:</b> Push students to engage with the ideas of others by asking who agrees or disagrees with the idea presented and to share why</li>
+            <li><b>Add on:</b> Ask students to build on or add on to the ideas of another student, “Who can add on to his idea?”</li>
+          </ul>
+        </ol>
+        <br>
+        <textarea rows="4" cols="70" placeholder="Jot down notes here"></textarea>
+      </ol>
     </div>
-    
+    <div role="tabpanel" class="tab-pane" id="practice">
+      <h3>Practice your lesson plan!</h3>
+      <p>Now that you've spent time planning out how you'll lead a discussion for each problem, it's time to practice. Practicing your lesson before heading into section 
+    </div>
     <div role="tabpanel" class="tab-pane" id="testshare">
-      <h3>Share your discussion with us!</h3>
-        <p>How'd it go?! Share questions, insights, and videos from your discussion</p>
-        <textarea rows="4" cols="70" placeholder="Say something..."></textarea><br>
-        <button type="button" class="btn btn-primary">Share!</button>
-
       <h3>How do I evaluate the discussion?</h3>
       <p>You can use these criterion to evaluate discussions with your students.<p>
       <h4>Instructor as guide</h4>
@@ -243,6 +274,11 @@
         <li>Revise their ideas based on input from others</li>
         <li>Talk with one another more than to the instructor</li>
       </ul>
+
+      <h3>Share your discussion with us!</h3>
+        <p>How'd it go?! Share questions, insights, and videos from your discussion</p>
+        <textarea rows="4" cols="70" placeholder="Say something..."></textarea><br>
+        <button type="button" class="btn btn-primary" onclick="setProgressBar(100);">Share!</button>
 
     </div>
   </div>
