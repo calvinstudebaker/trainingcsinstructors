@@ -1,6 +1,6 @@
 {
   "name": "trainingcsinstructors",
-  "description": "onlnie learning module to help CS instructors promote student discussion",
+  "description": "online learning module to help CS instructors promote student discussion",
   "version": "0.0.1",
   "dependencies": {
     "express": "2.5.x",
