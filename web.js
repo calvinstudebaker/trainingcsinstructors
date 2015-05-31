@@ -25,8 +25,8 @@ app.get('/*', function(request, response) {
     fs.readFile(filePath, function(err, content) {
         if(err){
             contentType = 'text/plain';
-            response.writeHead(200, {'Content-Type' : contentType});
-            response.write("not found");
+            response.writeHead(404, "Not Found", {'Content-Type' : contentType});
+            response.write("Resource Not Found");
             console.log("GET RESPONDED WITH ERROR PAGE");
             response.end();
         }else{
