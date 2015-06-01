@@ -42,7 +42,6 @@ app.get('/*', function(request, response) {
 app.post('/', function(request, response){
     console.log("POST RECIEVED");
     console.log(request.body);
-    var data = request.body;
     response.writeHead(200, {'Content-Type' : 'text/plain'});
     response.write("success");
     response.end();
